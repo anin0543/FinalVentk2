@@ -18,9 +18,15 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 
 // simple route
-app.get("/", (req, res) => {
-    res.json({ message: "Mental Shower DB" });
-});
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static('clint/build'));
+    app.get('/', (req, res) => {
+        res.sendFile(path.resolve(__dirname, "clint", "build", "index.html"))
+    })
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, "clint", "build", "index.html"))
+    })
+}
 
 require("./app/routes/user.routes")(app);
 require("./app/routes/checkin.routes")(app);
