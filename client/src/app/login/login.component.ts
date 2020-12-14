@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import * as bcrypt from 'bcryptjs';
 import {AuthService} from '../_services/auth.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import {TokenStorageService} from '../_services/token-storage.service';
