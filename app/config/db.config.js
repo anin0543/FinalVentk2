@@ -4,7 +4,7 @@ module.exports = {
   PASSWORD: '',
   DB: "ventk2",
   dialect: "mysql",
-  PORT: process.env.PORT || 3306,
+  PORT: process.env.PORT || 5000,
   pool: {
     max: 5,
     min: 0,
