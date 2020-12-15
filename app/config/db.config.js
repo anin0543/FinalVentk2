@@ -1,8 +1,8 @@
 module.exports = {
-  HOST: "localhost",
-  USER: "root",
-  PASSWORD: '',
-  DB: "ventk2",
+  HOST: "198.71.225.62",
+  USER: "DurbarDB'",
+  PASSWORD: 'pinkworld2050',
+  DB: "DurbarDB",
   dialect: "mysql",
   PORT: process.env.PORT || 3306,
   pool: {
