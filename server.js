@@ -21,7 +21,7 @@ app.use(bodyparser.urlencoded({ extended: true }));
     app.use(express.static('clint/build'));
     app.get('/*', function(req,res) {
 
-        res.sendFile(path.join(__dirname + '/dist/client/index.html'));
+        res.sendFile(path.join(__dirname + 'D:\FinalVentk2\client\dist\client\index.html'));
         });
 
     // app.get('*', (req, res) => {

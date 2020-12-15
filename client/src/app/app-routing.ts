@@ -30,7 +30,6 @@ export const routing = RouterModule.forRoot([
     { path: 'learningelement', component: NewlearningelementsComponent },
     { path: 'learningelement/info', component: InfoComponent },
     { path: '**', component: PageNotFoundComponent },
-    
 ]);
 
 
