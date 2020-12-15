@@ -18,10 +18,10 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 
 // simple route
-    app.use(express.static('clint/build'));
+    app.use(express.static(__dirname +'./dist/client'));
     app.get('/*', function(req,res) {
 
-        res.sendFile(path.join(__dirname + 'D:\FinalVentk2\client\dist\client\index.html'));
+        res.sendFile(path.join( __dirname + '/dist/client/index.html'));
         });
 
     // app.get('*', (req, res) => {
