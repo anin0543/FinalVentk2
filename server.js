@@ -22,7 +22,10 @@ app.use(bodyparser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'client/dist/')))
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'client/dist/client/index.html'));
-  });
+  }).catch(error => {
+    // Will not execute
+    console.log('caught', err.message);
+  });;
 (userRoute)(app);
 (checkin)(app);
 (auth)(app);
