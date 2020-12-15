@@ -19,12 +19,14 @@ app.use(bodyparser.urlencoded({ extended: true }));
 
 // simple route
     app.use(express.static('clint/build'));
-    app.get('/', (req, res) => {
-        res.sendFile(path.join(__dirname, "clint", "build", "index.html"))
-    })
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname, "clint", "build", "index.html"))
-    })
+    app.get('/*', function(req,res) {
+
+        res.sendFile(path.join(__dirname,'/dist/client/index.html'));
+        });
+
+    // app.get('*', (req, res) => {
+    //     res.sendFile(path.join(__dirname, "clint", "build", "index.html"))
+    // })
 
 require("./app/routes/user.routes")(app);
 require("./app/routes/checkin.routes")(app);
