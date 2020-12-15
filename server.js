@@ -1,12 +1,12 @@
 const express = require("express");
 const bodyparser = require("body-parser");
 const cors = require("cors");
-
 const app = express();
 app.use(cors());
-
+const userRoute = require('./app/routes/user.routes');
+const checkin = require('./app/routes/checkin.routes');
+const auth = require('./app/routes/auth.routes');
 const db = require("./app/models");
-
 db.sequelize.sync({force: false}).then(() => {
     console.log('Drop and resync database')
 });
@@ -27,9 +27,9 @@ app.get('/', function(req, res) {
     //     res.sendFile(path.join(__dirname, "clint", "build", "index.html"))
     // })
 
-require("./app/routes/user.routes")(app);
-require("./app/routes/checkin.routes")(app);
-require("./app/routes/auth.routes")(app);
+(userRoute)(app);
+(checkin)(app);
+(auth)(app);
 const PORT = process.env.PORT || 8080;
 
 app.listen(PORT, () => {
