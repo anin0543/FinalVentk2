@@ -19,15 +19,10 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 
 // simple route
-app.use(express.static('/client/dist'));
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, 'client' ,'dist' , 'client', 'index.html'));
+app.use(express.static(path.join(__dirname, 'client/dist/')))
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client/dist/index.html'));
   });
-
-    // app.get('*', (req, res) => {
-    //     res.sendFile(path.join(__dirname, "clint", "build", "index.html"))
-    // })
-
 (userRoute)(app);
 (checkin)(app);
 (auth)(app);
