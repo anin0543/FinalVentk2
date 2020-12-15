@@ -4,10 +4,10 @@ const path = require('path');
 const cors = require("cors");
 const app = express();
 app.use(cors());
-const userRoute = require('./app/routes/user.routes');
-const checkin = require('./app/routes/checkin.routes');
-const auth = require('./app/routes/auth.routes');
-const db = require("./app/models");
+const userRoute = require('./routes/user.routes');
+const checkin = require('./routes/checkin.routes');
+const auth = require('./routes/auth.routes');
+const db = require("./models");
 db.sequelize.sync({force: false}).then(() => {
     console.log('Drop and resync database')
 });

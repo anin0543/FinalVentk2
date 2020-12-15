@@ -1,4 +1,4 @@
-const config = require("../config/db.config.js");
+const config = require("../config/db.config");
 
 const Sequelize = require("sequelize");
 // To make it more simple, we made our Seq refer to our config files.
