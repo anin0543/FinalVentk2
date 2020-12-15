@@ -1,6 +1,6 @@
 module.exports = {
   HOST: "198.71.225.62",
-  USER: "DurbarDB'",
+  USER: "DurbarDB",
   PASSWORD: 'pinkworld2050',
   DB: "DurbarDB",
   dialect: "mysql",
