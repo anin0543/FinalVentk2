@@ -26,7 +26,7 @@ app.use(bodyparser.urlencoded({ extended: true }));
 // });
 app.use(express.static(__dirname + '/dist'));
 app.get('*', (req, res) => {
-res.sendFile(`./client/dist/index.html`);
+res.sendFile(`D:\FinalVentk2\client\dist\client\index.html`);
   });
 
 (userRoute)(app);
