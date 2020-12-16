@@ -19,9 +19,9 @@ app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({ extended: true }));
 
 // simple route
-app.use(express.static(__dirname+'/dist'));
+app.use(express.static(__dirname+'/dist/client'));
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname+'/dist/index.html'));
+    res.sendFile(path.join(__dirname+'/dist/client/index.html'));
   });
 
 
