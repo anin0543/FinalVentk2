@@ -18,16 +18,10 @@ app.use(bodyparser.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyparser.urlencoded({ extended: true }));
 
-// simple route
-// app.use(express.static(path.join(__dirname, 'dist')));
-
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname + '/dist/index.html'));
-// });
-app.use(express.static(__dirname + '/dist'));
-app.get('*', (req, res) => {
-res.sendFile(`D:\FinalVentk2\client\dist\client\index.html`);
-  });
+app.use(express.static(__dirname + '/dist/semester-project-vent2-u'));
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname + '/dist/semester-project-vent2-u/index.html'));
+});
 
 (userRoute)(app);
 (checkin)(app);
