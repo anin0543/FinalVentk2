@@ -18,7 +18,7 @@ app.use(bodyparser.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyparser.urlencoded({ extended: true }));
 
-app.use(express.static(__dirname + 'client/dist/client'));
+app.use(express.static(__dirname + '/client/dist/client'));
 app.get('/*', function(req, res) {
   const fullPath = path.join(__dirname + '/client/dist/client/index.html');
   console.log(" Fetching from.." + fullPath);
