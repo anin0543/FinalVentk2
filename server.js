@@ -18,9 +18,11 @@ app.use(bodyparser.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyparser.urlencoded({ extended: true }));
 
-app.use(express.static(__dirname + '/dist/client'));
+app.use(express.static(__dirname + 'client/dist/client'));
 app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname + '/dist/client'));
+  const fullPath = path.join(__dirname + '/client/dist/client/index.html');
+  console.log(" Fetching from.." + fullPath);
+  res.sendFile(fullPath);
 });
 
 (userRoute)(app);
