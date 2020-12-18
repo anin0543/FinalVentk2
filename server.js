@@ -18,9 +18,9 @@ app.use(bodyparser.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyparser.urlencoded({ extended: true }));
 
-app.use(express.static(__dirname + '/dist/semester-project-vent2-u'));
+app.use(express.static(__dirname + '/dist/client'));
 app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname + '/dist/semester-project-vent2-u/index.html'));
+  res.sendFile(path.join(__dirname + '/dist/client'));
 });
 
 (userRoute)(app);
